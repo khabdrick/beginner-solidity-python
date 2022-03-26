@@ -16,5 +16,5 @@ compiled_sol = compile_standard(
             }
         },
     },
-    solc_version="0.6.0",
+    solc_version="0.8.0",
 )
