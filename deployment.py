@@ -18,3 +18,4 @@ compiled_sol = compile_standard(
     },
     solc_version="0.8.0",
 )
+print(compiled_sol)
