@@ -11,7 +11,7 @@ compiled_sol = compile_standard(
         "settings": {
             "outputSelection": {
                 "*": {
-                    "*": ["abi", "metadata", "evm.bytecode", "evm.bytecode.sourceMap"]
+                    "*": ["abi", "metadata", "evm.bytecode", "evm.bytecode.sourceMap"] # output needed to interact with and deploy contract 
                 }
             }
         },
