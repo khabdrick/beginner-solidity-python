@@ -7,7 +7,7 @@ install_solc("0.8.0")
 compiled_sol = compile_standard(
     {
         "language": "Solidity",
-        "sources": {"SimpleStorage.sol": {"content": contact_list_file}},
+        "sources": {"ContactList.sol": {"content": contact_list_file}},
         "settings": {
             "outputSelection": {
                 "*": {
