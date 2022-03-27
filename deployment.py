@@ -42,7 +42,7 @@ private_key = "0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1
 ContactList = w3.eth.contract(abi=abi, bytecode=bytecode)
 # Get the latest transaction
 nonce = w3.eth.getTransactionCount(address)
-# Submit the transaction that deploys the contract
+# build transaction
 transaction = ContactList.constructor().buildTransaction(
     {
         "chainId": chain_id,
@@ -52,11 +52,11 @@ transaction = ContactList.constructor().buildTransaction(
     }
 )
 # Sign the transaction
-sign_ttransaction = w3.eth.account.sign_transaction(transaction, private_key=private_key)
+sign_transaction = w3.eth.account.sign_transaction(transaction, private_key=private_key)
 print("Deploying Contract!")
-# Send it!
-tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+# Send the transaction
+transaction_hash = w3.eth.send_raw_transaction(sign_transaction.rawTransaction)
 # Wait for the transaction to be mined, and get the transaction receipt
 print("Waiting for transaction to finish...")
-tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-print(f"Done! Contract deployed to {tx_receipt.contractAddress}")
+transaction_receipt = w3.eth.wait_for_transaction_receipt(transaction_hash)
+print(f"Done! Contract deployed to {transaction_receipt.contractAddress}")
