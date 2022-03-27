@@ -30,7 +30,7 @@ with open("compiler_output.json", "w") as file:
 bytecode = compiled_sol["contracts"]["ContactList.sol"]["ContactList"]["evm"]["bytecode"]["object"]
 
 # get abi
-abi =compiled_sol["contracts"]["ContactList.sol"]["ContactList"]["metadata"]["output"]["abi"]
+abi = json.loads(compiled_sol["contracts"]["ContactList.sol"]["ContactList"]["metadata"])["output"]["abi"]
 
 # For connecting to ganache
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
