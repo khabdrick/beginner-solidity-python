@@ -1,4 +1,7 @@
 from solcx import compile_standard, install_solc
+import json
+
+
 with open("ContactList.sol", "r") as file:
     contact_list_file = file.read()
 
@@ -18,4 +21,6 @@ compiled_sol = compile_standard(
     },
     solc_version="0.8.0",
 )
-print(compiled_sol)
+
+with open("compiler_output.json", "w") as file:
+    json.dump(compiled_sol, file)
